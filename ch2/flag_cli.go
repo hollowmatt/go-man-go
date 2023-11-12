@@ -10,13 +10,14 @@ var name string
 var spanish bool
 var french bool
 
+// & is a pointer to a variable... * will de-reference the pointer
 func init() {
 	flag.BoolVar(&spanish, "spanish", false, "Use Spanish language")
 	flag.BoolVar(&spanish, "s", false, "Use Spanish language")
 	flag.BoolVar(&french, "french", false, "Use French language")
 	flag.BoolVar(&french, "f", false, "Use French language")
 	flag.StringVar(&name, "name", "World", "A name to say hello to")
-	flag.StringVar(&name, "n", "World", "A name to say hellow to")
+	flag.StringVar(&name, "n", "World", "A name to say hello to")
 }
 
 func main() {
