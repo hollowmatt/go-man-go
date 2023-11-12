@@ -10,7 +10,7 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Name = "hello_cli"
-	app.Usage = "Print hellow world"
+	app.Usage = "Print hello world"
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "name, n",
