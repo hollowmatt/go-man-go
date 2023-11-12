@@ -5,7 +5,8 @@ import (
 	"fmt"
 )
 
-var name = flag.String("name", "World", "A name to say hello to.")
+// var name = flag.String("name", "World", "A name to say hello to.")
+var name string
 var spanish bool
 var french bool
 
@@ -14,18 +15,20 @@ func init() {
 	flag.BoolVar(&spanish, "s", false, "Use Spanish language")
 	flag.BoolVar(&french, "french", false, "Use French language")
 	flag.BoolVar(&french, "f", false, "Use French language")
+	flag.StringVar(&name, "name", "World", "A name to say hello to")
+	flag.StringVar(&name, "n", "World", "A name to say hellow to")
 }
 
 func main() {
 	flag.Parse()
 
 	if spanish == true {
-		fmt.Printf("Hola %s!\n", *name)
+		fmt.Printf("Hola %s!\n", name)
 	} else {
 		if french == true {
-			fmt.Printf("Salut %s!\n", *name)
+			fmt.Printf("Salut %s!\n", name)
 		} else {
-			fmt.Printf("Hello %s!\n", *name)
+			fmt.Printf("Hello %s!\n", name)
 		}
 	}
 }

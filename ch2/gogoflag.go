@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
+
 	flags "github.com/jessevdk/go-flags"
 )
 
 var opts struct {
-	Name string `short:"n" long:"name" default:"World" description:"A name to say hi to"`
-	Spanish bool `short:"s" long:"spanish" default:false descrption:"Use Spanish language"`
+	Name    string `short:"n" long:"name" default:"World" description:"A name to say hi to"`
+	Spanish bool   `short:"s" long:"spanish" default:false descrption:"Use Spanish language"`
 }
 
 func main() {
