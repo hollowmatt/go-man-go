@@ -43,7 +43,7 @@ func main() {
 				},
 			},
 			Action: func(c *cli.Context) error {
-				start := c.Int("stop")
+				start := c.Int("start")
 				if start < 0 {
 					fmt.Println("Stop cannot be negative")
 				}
