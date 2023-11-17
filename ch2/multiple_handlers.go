@@ -9,6 +9,7 @@ import (
 func main() {
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/goodbye/", goodbye)
+	http.HandleFunc("/", homePage)
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -29,4 +30,12 @@ func goodbye(res http.ResponseWriter, req *http.Request) {
 		name = "Inigo Montoya"
 	}
 	fmt.Fprint(res, "Goodbye ", name)
+}
+
+func homePage(res http.ResponseWriter, req *http.Request) {
+	if req.URL.Path != "/" {
+		http.NotFound(res, req)
+		return
+	}
+	fmt.Fprint(res, "This is the home page")
 }
